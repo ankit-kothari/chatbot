@@ -1,4 +1,5 @@
 FROM python:3.7.3
+RUN pip install --upgrade pip
 LABEL maintainer="ankit256@gmail.com"
 RUN ["mkdir", "/docker_practice_directory"]
 WORKDIR /docker_practice_directory
