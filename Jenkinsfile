@@ -9,12 +9,12 @@ pipeline {
     }
         stage('Build Image') {
            steps {
-               sh 'docker build image -t chatbot:v1 .'
+               sh 'sudo docker build image -t chatbot:v1 .'
         }
     }
     stage('Run Image') {
            steps {
-               sh 'docker run -d chatbot:v1'
+               sh 'sudo docker run -d chatbot:v1'
         }
     }
     }
