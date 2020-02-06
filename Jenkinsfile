@@ -2,7 +2,7 @@ def NAME = 'chatbot'
 def TAG    = 'git log -1 --pretty=%!H(MISSING))'
 def IMG   = '${NAME}:${TAG}'
 def LATEST  = '${NAME}:latest'
-pipeline
+pipeline {
   agent any
     stages {
        stage('CLone Repository') {
@@ -22,3 +22,5 @@ pipeline
                sh 'docker run ${LATEST} '
         }
     }
+    }
+}
