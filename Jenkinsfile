@@ -1,4 +1,4 @@
-NAME   := chatbot
+NAME    = chatbot
 TAG    := $$(git log -1 --pretty=%!H(MISSING))
 IMG    := ${NAME}:${TAG}
 LATEST := ${NAME}:latest
