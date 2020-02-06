@@ -9,7 +9,7 @@ pipeline {
     }
         stage('Build Image') {
            steps {
-               sh 'docker build image -t chatbot:v1 .'
+               sh 'docker build -t chatbot:v1 .'
         }
     }
     stage('Run Image') {
