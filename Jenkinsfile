@@ -1,7 +1,3 @@
-def NAME = 'chatbot'
-def TAG    = 'git log -1 --pretty=%!H(MISSING))'
-def IMG   = '${NAME}:${TAG}'
-def LATEST  = '${NAME}:latest'
 pipeline {
   agent any
     stages {
@@ -13,13 +9,12 @@ pipeline {
     }
         stage('Build Image') {
            steps {
-               sh 'docker build image -t ${IMG} .'
-               sh 'docker tag ${IMG} ${LATEST}'
+               sh 'docker build image -t chatbot:v1 .'
         }
     }
     stage('Run Image') {
            steps {
-               sh 'docker run ${LATEST} '
+               sh 'docker run -d chatbot:v1'
         }
     }
     }
