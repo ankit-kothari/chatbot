@@ -1,7 +1,7 @@
 NAME    = chatbot
-TAG    := $$(git log -1 --pretty=%!H(MISSING))
-IMG    := ${NAME}:${TAG}
-LATEST := ${NAME}:latest
+TAG    = $$(git log -1 --pretty=%!H(MISSING))
+IMG    = ${NAME}:${TAG}
+LATEST = ${NAME}:latest
 pipeline
   agent any
     stages {
